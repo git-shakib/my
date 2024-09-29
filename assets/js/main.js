@@ -277,29 +277,6 @@ $(document).ready(function () {
   var ms_cursorinner = document.querySelector('.ms-cursor-2');
   var a = document.querySelectorAll('a');
 
-  document.addEventListener('mousemove', function(e){
-    var x = e.clientX;
-    var y = e.clientY;
-    ms_cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-  });
-
-  document.addEventListener('mousemove', function(e){
-    var x = e.clientX;
-    var y = e.clientY;
-    ms_cursorinner.style.left = x + 'px';
-    ms_cursorinner.style.top = y + 'px';
-  });
-
-  document.addEventListener('mousedown', function(){
-    ms_cursor.classList.add('click');
-    ms_cursorinner.classList.add('ms-cursorinnerhover')
-  });
-
-  document.addEventListener('mouseup', function(){
-    ms_cursor.classList.remove('click')
-    ms_cursorinner.classList.remove('ms-cursorinnerhover')
-  });
-
   a.forEach(item => {
     item.addEventListener('mouseover', () => {
       ms_cursor.classList.add('ms-hover-cursor');
